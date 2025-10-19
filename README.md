@@ -53,24 +53,25 @@ Commit messages follow the following structure:
 /configs/              # YAML configs (data, features, regime, eval, portfolio)
 /data/
   raw/                 # untouched downloads (gitignored)
-  interim/             # cleaned joins (gitignored)
+    macro_data.csv
+    factor_returns.csv
   processed/           # model-ready features (gitignored)
-/notebooks/            # EDA & reports (outputs stripped by pre-commit)
-/src/nfs_regime/
-  __init__.py
-  data/                # loaders, validators
-  features/            # level/trend/vol builders
-  regimes/             # similarity, distance, kNN-like logic
-  factors/             # factor return handlers
-  portfolio/           # long-short construction, weighting
-  eval/                # metrics: Hit, IC, Sharpe/alpha
-  utils/               # logging, seeds, io
-/scripts/
-  build_features.py
-  identify_regime.py
-  predict_factors.py
-  build_portfolio.py
-  backtest.py
+    merged_data.csv
+/notebooks/
+  exploratory_analysis.ipynb
+  feature_validation.ipnyb
+  performance_eval.ipnyb
+/src/
+  data_loader.py
+  feature_engineering.py
+  factor_prediction.py
+  regime_model.py
+  evaluation.py
+/docs/
+  literature_review.md
+  project_scope.md
+  methodology_draft.md
+  slides.pdf
 /tests/                # pytest
 .gitignore
 makefile
